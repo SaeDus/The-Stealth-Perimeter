@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PerimeterNode : MonoBehaviour
+namespace The_Stealth_Perimeter.StealthPerimeter
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    using UnityEngine;
 
-    // Update is called once per frame
-    void Update()
+    public class PerimeterNode
     {
-        
+        public bool Walkable => _walkable;
+        private bool _walkable;
+
+        public Vector3 WorldPosition => _worldPosition;
+        private Vector3 _worldPosition;
+
+        public int GridX => _gridX;
+        private int _gridX;
+
+        public int GridY => _gridY;
+        private int _gridY;
+
+        public int GCost;
+
+
+        public PerimeterNode(bool walkable, Vector3 worldPosition, int gridX, int gridY, int gCost)
+        {
+            _walkable = walkable;
+            _worldPosition = worldPosition;
+            _gridX = gridX;
+            _gridY = gridY;
+            GCost = gCost;
+        }
     }
 }
